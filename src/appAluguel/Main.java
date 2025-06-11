@@ -18,7 +18,7 @@ public class Main {
 				Veiculo.cadastrar_veiculo(scStr, scNum);
 				break;
 			case 2:
-				Veiculo.buscar_orientacoes(scStr, scNum);
+				Veiculo.buscar_veiculos(scStr, scNum);
 				break;
 			case 3:
 				break;
