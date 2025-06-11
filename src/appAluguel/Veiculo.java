@@ -117,6 +117,7 @@ public class Veiculo {
 
     		int escolhaBuscaPrincipal = 0;
     		int escolhaBuscaTodos = 0;
+    		boolean encontrado = false;
 
             System.out.println("\n==== Buscar Veículos ====");
             System.out.println("1 - Visualizar Todos");
@@ -143,10 +144,87 @@ public class Veiculo {
                     
                     switch(escolhaBuscaTodos) {
                     	case 1:
-                    		break;
+                            encontrado = false;
+
+                            String sql ="SELECT * FROM aluguel_veiculos.view_todos_veiculos_disponiveis";
+                    		Statement stmt = conn.createStatement();
+                            ResultSet rs = stmt.executeQuery(sql);
+
+                            System.out.println("");
+                            
+                            while (rs.next()) {
+                                encontrado = true;
+                                System.out.println("╔══════════════════════════════════════════╗");
+                                System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                                System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
+                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                                System.out.println("╚══════════════════════════════════════════╝");
+                                Thread.sleep(350);            
+                            }
+                            if(encontrado == true) {
+                                System.out.println("");
+                            }
+                            if(encontrado != true) {
+                                System.out.println("╔═════════════════════════════════════╗");
+                                System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
+                                System.out.println("╚═════════════════════════════════════╝\n");
+                            }
+                            break;
+                            
                     	case 2:
+                    		encontrado = false;
+
+                            sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_alugados";
+                    		stmt = conn.createStatement();
+                            rs = stmt.executeQuery(sql);
+
+                            System.out.println("");
+                            
+                            while (rs.next()) {
+                                encontrado = true;
+                                System.out.println("╔══════════════════════════════════════════╗");
+                                System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                                System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
+                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                                System.out.println("╚══════════════════════════════════════════╝");
+                                Thread.sleep(350);            
+                            }
+                            if(encontrado == true) {
+                                System.out.println("");
+                            }
+                            if(encontrado != true) {
+                            	System.out.println("╔═════════════════════════════════════╗");
+                                System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
+                                System.out.println("╚═════════════════════════════════════╝\n");
+                            }
                     		break;
+                    		
                     	case 3:
+                    		encontrado = false;
+
+                            sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_manutenção";
+                    		stmt = conn.createStatement();
+                            rs = stmt.executeQuery(sql);
+
+                            System.out.println("");
+                            
+                            while (rs.next()) {
+                                encontrado = true;
+                                System.out.println("╔══════════════════════════════════════════╗");
+                                System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                                System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
+                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                                System.out.println("╚══════════════════════════════════════════╝");
+                                Thread.sleep(350);            
+                            }
+                            if(encontrado == true) {
+                                System.out.println("");
+                            }
+                            if(encontrado != true) {
+                            	System.out.println("╔═════════════════════════════════════╗");
+                                System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
+                                System.out.println("╚═════════════════════════════════════╝\n");
+                            }
                     		break;
                     	case 4:
                     		break;
