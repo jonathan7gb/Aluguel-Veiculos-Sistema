@@ -112,60 +112,6 @@ public class Veiculo {
     }
 
     //---------------------------------------------------------------------------
-    
-        public static void menu_busca_principal(){
-            System.out.println("\n==== Buscar Veículos ====");
-            System.out.println("1 - Visualizar Todos");
-            System.out.println("2 - Visualizar Carros");
-            System.out.println("3 - Visualizar Motos");
-            System.out.println("4 - Visualizar Vans");
-            System.out.println("5 - Visualizar Todos Apagados");
-            System.out.println("6 - Voltar ao Menu Principal");
-        }
-
-        public static void menu_busca_todos(){
-            System.out.println("\n==== Visualizar Todos ====");
-            System.out.println("1 - Disponíveis");
-            System.out.println("2 - Alugados");
-            System.out.println("3 - Em Manutenção");
-            System.out.println("4 - Buscar pela Placa");
-            System.out.println("5 - Buscar pelo Modelo");
-            System.out.println("6 - Buscar pela Marca");
-            System.out.println("7 - Voltar ao Menu de Busca");
-        }
-    	
-        public static void menu_busca_carro(){
-            System.out.println("\n==== Visualizar Carros ====");
-            System.out.println("1 - Disponíveis");
-            System.out.println("2 - Alugados");
-            System.out.println("3 - Em Manutenção");
-            System.out.println("4 - Buscar pela Placa");
-            System.out.println("5 - Buscar pelo Modelo");
-            System.out.println("6 - Buscar pela Marca");
-            System.out.println("7 - Voltar ao Menu de Busca");
-        }
-
-        public static  void menu_busca_moto(){
-        	System.out.println("\n==== Visualizar Motos ====");
-            System.out.println("1 - Disponíveis");
-            System.out.println("2 - Alugadas");
-            System.out.println("3 - Em Manutenção");
-            System.out.println("4 - Buscar pela Placa");
-            System.out.println("5 - Buscar pelo Modelo");
-            System.out.println("6 - Buscar pela Marca");
-            System.out.println("7 - Voltar ao Menu de Busca");
-        }
-        
-        public static  void menu_busca_van(){
-        	System.out.println("\n==== Visualizar Vans ====");
-        	System.out.println("1 - Disponíveis");
-        	System.out.println("2 - Alugadas");
-        	System.out.println("3 - Em Manutenção");
-        	System.out.println("4 - Buscar pela Placa");
-        	System.out.println("5 - Buscar pelo Modelo");
-        	System.out.println("6 - Buscar pela Marca");
-        	System.out.println("7 - Voltar ao Menu de Busca");
-        }
     	
     	public static void buscar_veiculos(Scanner scStr, Scanner scNum) {
     		try (Connection conn = Conexao.getConexao()) {
@@ -186,7 +132,168 @@ public class Veiculo {
                     
                     switch(escolhaBuscaTodos) {
                     	case 1:
-                            encontrado = false;
+                            todos_veiculos_disponiveis();
+                            break;
+                            
+                    	case 2:
+                    		todos_veiculos_alugados();
+                    		break;
+                    		
+                    	case 3:
+                    		View_todos_veiculos_manutenção();
+                    		break;
+                    	case 4:
+                    		break;
+                    	case 5:
+                    		break;
+                    	case 6:
+                    		break;
+                    	case 7:
+                            System.out.println("");
+                            break;
+                        default:
+                            System.out.println(" \n-- Escolha Inválida --\n");
+                            break;
+                    }
+                    break;
+
+                case 2:
+                    Carro.menu_busca_carro();
+                    System.out.print("? - Sua escolha: ");
+                    int escolhaBuscaCarro = scNum.nextInt();
+
+                    switch(escolhaBuscaCarro) {
+                    	case 1:
+                            Carro.todos_carros_disponiveis();
+                            break;
+                            
+                    	case 2:
+                            Carro.todos_carros_alugados();
+                    		break;
+                    		
+                    	case 3:
+                            Carro.todos_carros_manutencao();
+                    		break;
+                    	case 4:
+                    		break;
+                    	case 5:
+                    		break;
+                    	case 6:
+                    		break;
+                    	case 7:
+                            System.out.println("");
+                            break;
+                        default:
+                            System.out.println(" \n-- Escolha Inválida --\n");
+                            break;
+                    }
+                    break;
+
+                case 3:
+                    Moto.menu_busca_moto();
+                    System.out.print("? - Sua escolha: ");
+                    int escolhaBuscaMoto = scNum.nextInt();
+
+                    switch(escolhaBuscaMoto) {
+                    	case 1:
+                            Moto.todas_motos_disponiveis();
+                            break;
+                            
+                    	case 2:
+                            Moto.todas_motos_alugados();
+                    		break;
+                    		
+                    	case 3:
+                            Moto.todas_motos_manutencao();
+                    		break;
+                    	case 4:
+                    		break;
+                    	case 5:
+                    		break;
+                    	case 6:
+                    		break;
+                    	case 7:
+                            System.out.println("");
+                            break;
+                        default:
+                            System.out.println(" \n-- Escolha Inválida --\n");
+                            break;
+                    }
+                    break;
+
+                case 4:
+                	Van.menu_busca_van();
+                    System.out.print("? - Sua escolha: ");
+                    int escolhaBuscaVan = scNum.nextInt();
+
+                    switch(escolhaBuscaVan) {
+                    	case 1:
+                            Van.todas_vans_disponiveis();
+                            break;
+                            
+                    	case 2:
+                            Van.todas_vans_alugados();
+                    		break;
+                    		
+                    	case 3:
+                            Van.todas_vans_manutencao();
+                    		break;
+                    	case 4:
+                    		break;
+                    	case 5:
+                    		break;
+                    	case 6:
+                    		break;
+                    	case 7:
+                            System.out.println("");
+                            break;
+                        default:
+                            System.out.println(" \n-- Escolha Inválida --\n");
+                            break;
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("\n==== Visualizar Todos Apagados ====");
+                    break;
+            
+                case 6:
+                    System.out.println("");
+                    break;
+                default:
+                    System.out.println(" \n-- Escolha Inválida --\n");
+                    break;
+            }
+    	
+			}catch (Exception e) {
+		        e.printStackTrace();
+		    }
+    	}
+
+        public static void menu_busca_principal(){
+            System.out.println("\n==== Buscar Veículos ====");
+            System.out.println("1 - Visualizar Todos");
+            System.out.println("2 - Visualizar Carros");
+            System.out.println("3 - Visualizar Motos");
+            System.out.println("4 - Visualizar Vans");
+            System.out.println("5 - Visualizar Todos Apagados");
+            System.out.println("6 - Voltar ao Menu Principal");
+        }
+
+        public static void menu_busca_todos(){
+            System.out.println("\n==== Visualizar Todos ====");
+            System.out.println("1 - Disponíveis");
+            System.out.println("2 - Alugados");
+            System.out.println("3 - Em Manutenção");
+            System.out.println("4 - Buscar pela Placa");
+            System.out.println("5 - Buscar pelo Modelo");
+            System.out.println("6 - Buscar pela Marca");
+            System.out.println("7 - Voltar ao Menu de Busca");
+        }
+
+        public static void todos_veiculos_disponiveis(){
+            try (Connection conn = Conexao.getConexao()) {
+                boolean encontrado = false;
 
                             String sql ="SELECT * FROM aluguel_veiculos.view_todos_veiculos_disponiveis";
                     		Statement stmt = conn.createStatement();
@@ -211,119 +318,75 @@ public class Veiculo {
                                 System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
                                 System.out.println("╚═════════════════════════════════════╝\n");
                             }
-                            break;
-                            
-                    	case 2:
-                    		encontrado = false;
-
-                            sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_alugados";
-                    		stmt = conn.createStatement();
-                            rs = stmt.executeQuery(sql);
-
-                            System.out.println("");
-                            
-                            while (rs.next()) {
-                                encontrado = true;
-                                System.out.println("╔══════════════════════════════════════════╗");
-                                System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
-                                System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
-                                System.out.println("╚══════════════════════════════════════════╝");
-                                Thread.sleep(350);            
-                            }
-                            if(encontrado == true) {
-                                System.out.println("");
-                            }
-                            if(encontrado != true) {
-                            	System.out.println("╔═════════════════════════════════════╗");
-                                System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
-                                System.out.println("╚═════════════════════════════════════╝\n");
-                            }
-                    		break;
-                    		
-                    	case 3:
-                    		encontrado = false;
-
-                            sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_manutenção";
-                    		stmt = conn.createStatement();
-                            rs = stmt.executeQuery(sql);
-
-                            System.out.println("");
-                            
-                            while (rs.next()) {
-                                encontrado = true;
-                                System.out.println("╔══════════════════════════════════════════╗");
-                                System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
-                                System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
-                                System.out.println("╚══════════════════════════════════════════╝");
-                                Thread.sleep(350);            
-                            }
-                            if(encontrado == true) {
-                                System.out.println("");
-                            }
-                            if(encontrado != true) {
-                            	System.out.println("╔═════════════════════════════════════╗");
-                                System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
-                                System.out.println("╚═════════════════════════════════════╝\n");
-                            }
-                    		break;
-                    	case 4:
-                    		break;
-                    	case 5:
-                    		break;
-                    	case 6:
-                    		break;
-                    	case 7:
-                            System.out.println("");
-                            break;
-                        default:
-                            System.out.println(" \n-- Escolha Inválida --\n");
-                            break;
-                    }
-                    break;
-
-                case 2:
-                    menu_busca_carro();
-                    System.out.print("? - Sua escolha: ");
-                    escolhaBuscaTodos = scNum.nextInt();
-                    break;
-
-                case 3:
-                    menu_busca_moto();
-                    System.out.print("? - Sua escolha: ");
-                    escolhaBuscaTodos = scNum.nextInt();
-                    break;
-
-                case 4:
-                	menu_busca_van();
-                    System.out.print("? - Sua escolha: ");
-                    escolhaBuscaTodos = scNum.nextInt();
-                    break;
-
-                case 5:
-                    System.out.println("\n==== Visualizar Todos Apagados ====");
-                    break;
-            
-                case 6:
-                    System.out.println("");
-                    break;
-                default:
-                    System.out.println(" \n-- Escolha Inválida --\n");
-                    break;
-            }
-    	
-			}catch (Exception e) {
-		        e.printStackTrace();
-		    }
-    	}
-
-        public void buscar_todos(Scanner scStr, Scanner scNum){
-            try (Connection conn = Conexao.getConexao()) {
-        
         
             }catch (Exception e) {
 		        e.printStackTrace();
 		    }
         }
+
+        public static void todos_veiculos_alugados(){
+            try (Connection conn = Conexao.getConexao()) {
+                boolean encontrado = false;
+
+                String sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_alugados";
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
+
+                System.out.println("");
+                
+                while (rs.next()) {
+                    encontrado = true;
+                    System.out.println("╔══════════════════════════════════════════╗");
+                    System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                    System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
+                    System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                    System.out.println("╚══════════════════════════════════════════╝");
+                    Thread.sleep(350);            
+                }
+                if(encontrado == true) {
+                    System.out.println("");
+                }
+                if(encontrado != true) {
+                    System.out.println("╔═════════════════════════════════════╗");
+                    System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
+                    System.out.println("╚═════════════════════════════════════╝\n");
+                }
+            }catch (Exception e) {
+		        e.printStackTrace();
+		    }
+        }
+
+        public static void View_todos_veiculos_manutenção(){
+            try (Connection conn = Conexao.getConexao()) {
+                boolean encontrado = false;
+
+                String sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_manutenção";
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql);
+
+                System.out.println("");
+                
+                while (rs.next()) {
+                    encontrado = true;
+                    System.out.println("╔══════════════════════════════════════════╗");
+                    System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                    System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
+                    System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                    System.out.println("╚══════════════════════════════════════════╝");
+                    Thread.sleep(350);            
+                }
+                if(encontrado == true) {
+                    System.out.println("");
+                }
+                if(encontrado != true) {
+                    System.out.println("╔═════════════════════════════════════╗");
+                    System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
+                    System.out.println("╚═════════════════════════════════════╝\n");
+                }
+            }catch (Exception e) {
+		        e.printStackTrace();
+		    }
+        }
+
+        
   }
