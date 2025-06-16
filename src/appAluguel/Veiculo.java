@@ -43,7 +43,9 @@ public class Veiculo {
     		
             String tipo = "";
 
-            System.out.println("\n==== CADASTRAR VEÍCULO ====");
+            System.out.println("\n╔═════════════════════════════════════╗");
+	        System.out.println("║          CADASTRAR VEÍCULO          ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("- Tipo do Veículo\n1 - Carro\n2 - Moto\n3 - Van\nEscolha: ");
             int tipoEscolha = scNum.nextInt();
 
@@ -58,7 +60,9 @@ public class Veiculo {
                     tipo = "Van";
                     break;
                 default:
-                    System.out.println(" -- Escolha inválida -- ");
+                	System.out.println("\n╔═════════════════════════════════════╗");
+    		        System.out.println("║           ESCOLHA INVÁLIDA          ║");
+    		        System.out.println("╚═════════════════════════════════════╝\n");
                     tipo = "Inválido";
                     break;
             }
@@ -76,7 +80,9 @@ public class Veiculo {
                 int ano_fabricacao = scNum.nextInt();
 
                 if(ano_fabricacao > 2025 || ano_fabricacao < 1901){
-                    System.out.println(" -- Ano de Fabricação inválido -- ");
+                	System.out.println("\n╔═════════════════════════════════════╗");
+    		        System.out.println("║      ANO DE FABRICAÇÃO INVÁLIDO     ║");
+    		        System.out.println("╚═════════════════════════════════════╝\n");
                 }else{
                     
                     Veiculo v1 = new Veiculo(tipo, modelo, marca, placa, ano_fabricacao);
@@ -96,7 +102,9 @@ public class Veiculo {
                     stmt.setInt(5, anoFabricacaoCad);
                     stmt.executeUpdate();
 
-                    System.out.println("\n==== VEÍCULO CADASTRADO COM SUCESSO ====\n");
+                    System.out.println("\n╔═════════════════════════════════════╗");
+        	        System.out.println("║    VEÍCULO CADASTRADO COM SUCESSO   ║");
+        	        System.out.println("╚═════════════════════════════════════╝\n");
                 }
                 
                }catch (SQLIntegrityConstraintViolationException e) {
@@ -154,7 +162,9 @@ public class Veiculo {
                             System.out.println("");
                             break;
                         default:
-                            System.out.println(" \n-- Escolha Inválida --\n");
+                        	System.out.println("\n╔═════════════════════════════════════╗");
+            		        System.out.println("║           ESCOLHA INVÁLIDA          ║");
+            		        System.out.println("╚═════════════════════════════════════╝\n");
                             break;
                     }
                     break;
@@ -188,7 +198,9 @@ public class Veiculo {
                             System.out.println("");
                             break;
                         default:
-                            System.out.println(" \n-- Escolha Inválida --\n");
+                        	System.out.println("\n╔═════════════════════════════════════╗");
+            		        System.out.println("║           ESCOLHA INVÁLIDA          ║");
+            		        System.out.println("╚═════════════════════════════════════╝\n");
                             break;
                     }
                     break;
@@ -222,7 +234,9 @@ public class Veiculo {
                             System.out.println("");
                             break;
                         default:
-                            System.out.println(" \n-- Escolha Inválida --\n");
+                        	System.out.println("\n╔═════════════════════════════════════╗");
+            		        System.out.println("║           ESCOLHA INVÁLIDA          ║");
+            		        System.out.println("╚═════════════════════════════════════╝\n");
                             break;
                     }
                     break;
@@ -256,13 +270,14 @@ public class Veiculo {
                             System.out.println("");
                             break;
                         default:
-                            System.out.println(" \n-- Escolha Inválida --\n");
+                        	System.out.println("\n╔═════════════════════════════════════╗");
+            		        System.out.println("║           ESCOLHA INVÁLIDA          ║");
+            		        System.out.println("╚═════════════════════════════════════╝\n");
                             break;
                     }
                     break;
 
                 case 5:
-                    System.out.println("\n==== Visualizar Todos Apagados ====\n");
                     VeiculosViews.View_todos_veiculos_apagados();
                     break;
             
@@ -270,12 +285,14 @@ public class Veiculo {
                     System.out.println("");
                     break;
                 default:
-                    System.out.println(" \n-- Escolha Inválida --\n");
+                	System.out.println("\n╔═════════════════════════════════════╗");
+    		        System.out.println("║           ESCOLHA INVÁLIDA          ║");
+    		        System.out.println("╚═════════════════════════════════════╝\n");
                     break;
             }
     	
 			}catch (InputMismatchException e) {
-                System.out.println("🚫 Entrada inválida!");
+                System.out.println("\n🚫 Entrada inválida!\n");
            }catch (Exception e) {
 		        e.printStackTrace();
 		    }
@@ -283,7 +300,9 @@ public class Veiculo {
 
         public static void menu_busca_principal(){
             try{
-                System.out.println("\n==== Buscar Veículos ====");
+            	System.out.println("\n╔═════════════════════════════════════╗");
+		        System.out.println("║           BUSCAR VEÍCULOS           ║");
+		        System.out.println("╚═════════════════════════════════════╝");
                 System.out.println("1 - Visualizar Todos");
                 Thread.sleep(100); 
                 System.out.println("2 - Visualizar Carros");
@@ -296,13 +315,16 @@ public class Veiculo {
                 Thread.sleep(100); 
                 System.out.println("6 - Voltar ao Menu Principal");
                 Thread.sleep(300); 
+                System.out.println("══════════════════════════════════════");
             }catch (Exception e) {
 		    }
         }
 
         public static void menu_busca_todos(){
             try {
-                System.out.println("\n==== Visualizar Todos ====");
+            	System.out.println("\n╔═════════════════════════════════════╗");
+		        System.out.println("║           VISUALIZAR TODOS          ║");
+		        System.out.println("╚═════════════════════════════════════╝");
                 System.out.println("1 - Disponíveis");
                 Thread.sleep(300);
                 System.out.println("2 - Alugados");
@@ -317,6 +339,7 @@ public class Veiculo {
                 Thread.sleep(300);
                 System.out.println("7 - Voltar ao Menu de Busca");
                 Thread.sleep(300);
+                System.out.println("══════════════════════════════════════");
             } catch (Exception e) {
             }
         }

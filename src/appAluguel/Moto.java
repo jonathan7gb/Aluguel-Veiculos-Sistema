@@ -6,7 +6,9 @@ import java.util.*;
 public class Moto {
 
     public static  void menu_busca_moto(){
-        System.out.println("\n==== Visualizar Motos ====");
+    	System.out.println("\n╔═════════════════════════════════════╗");
+        System.out.println("║          VISUALIZAR MOTOS           ║");
+        System.out.println("╚═════════════════════════════════════╝");
         System.out.println("1 - Disponíveis");
         System.out.println("2 - Alugadas");
         System.out.println("3 - Em Manutenção");
@@ -14,6 +16,7 @@ public class Moto {
         System.out.println("5 - Buscar pelo Modelo");
         System.out.println("6 - Buscar pela Marca");
         System.out.println("7 - Voltar ao Menu de Busca");
+        System.out.println("══════════════════════════════════════");
     }
 
     public static void todas_motos_disponiveis(){

@@ -7,7 +7,9 @@ import java.util.*;
 public class Carro {
 
     public static void menu_busca_carro(){
-        System.out.println("\n==== Visualizar Carros ====");
+    	System.out.println("\n╔═════════════════════════════════════╗");
+        System.out.println("║          VISUALIZAR CARROS          ║");
+        System.out.println("╚═════════════════════════════════════╝");
         System.out.println("1 - Disponíveis");
         System.out.println("2 - Alugados");
         System.out.println("3 - Em Manutenção");
@@ -15,6 +17,7 @@ public class Carro {
         System.out.println("5 - Buscar pelo Modelo");
         System.out.println("6 - Buscar pela Marca");
         System.out.println("7 - Voltar ao Menu de Busca");
+        System.out.println("══════════════════════════════════════");
     }
 
     public static void todos_carros_disponiveis(){

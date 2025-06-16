@@ -6,7 +6,9 @@ import java.util.*;
 public class Van {
 
     public static  void menu_busca_van(){
-        System.out.println("\n==== Visualizar Vans ====");
+    	System.out.println("\n╔═════════════════════════════════════╗");
+        System.out.println("║          VISUALIZAR VANS            ║");
+        System.out.println("╚═════════════════════════════════════╝");
         System.out.println("1 - Disponíveis");
         System.out.println("2 - Alugadas");
         System.out.println("3 - Em Manutenção");
@@ -14,6 +16,7 @@ public class Van {
         System.out.println("5 - Buscar pelo Modelo");
         System.out.println("6 - Buscar pela Marca");
         System.out.println("7 - Voltar ao Menu de Busca");
+        System.out.println("══════════════════════════════════════");
     }
 
     public static void todas_vans_disponiveis(){

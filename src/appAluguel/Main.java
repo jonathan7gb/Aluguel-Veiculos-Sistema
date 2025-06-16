@@ -27,10 +27,14 @@ public class Main {
 			case 5:
 				break;
 			case 0:
-				System.out.println(" \n-- Sistema Encerrado --");
+				System.out.println("\n╔═════════════════════════════════════╗");
+		        System.out.println("║        SISTEMA ENCERRADO...         ║");
+		        System.out.println("╚═════════════════════════════════════╝");
 				break;
 			default:
-				System.out.println(" \n-- Escolha Inválida --\n");
+				System.out.println("╔═════════════════════════════════════╗");
+		        System.out.println("║           ESCOLHA INVÁLIDA          ║");
+		        System.out.println("╚═════════════════════════════════════╝");
 				break;
 			}
     	}while(escolhaMenu != 0);
@@ -42,13 +46,16 @@ public class Main {
 	public static int menuAPP() {
 		try {	
 		Scanner scNum = new Scanner(System.in);
-			System.out.println("===== SISTEMA DE ALGUEL DE VEÍCULOS =====");
+			System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║    SISTEMA DE ALUGUEL DE VEÍCULOS   ║");
+	        System.out.println("╚═════════════════════════════════════╝");
 			System.out.println("1 - 📝 Cadastrar Veículo");  
 			System.out.println("2 - 🔍 Buscar Veículos");  
 			System.out.println("3 - ✏️ Alugar Veículo");  
 			System.out.println("4 - ✏️ Editar Veículo");  
 			System.out.println("5 - 🗑️ Remover Veículo");  
 			System.out.println("0 - 👋 Sair do Sistema"); 
+			System.out.println("══════════════════════════════════════");
 			System.out.print("? - Sua escolha: ");
 			int escolhaUsuario = scNum.nextInt();
 			
