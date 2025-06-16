@@ -183,7 +183,7 @@ public static void buscar_vans_pelo_modelo(){
         System.out.print("? - Insira o modelo da van: ");
         String modelo_ler = leia.nextLine();
 
-        String sql ="SELECT * FROM veiculos where modelo_veiculo = ? and tipo_veiculo = 'Van'";
+        String sql ="SELECT * FROM veiculos WHERE modelo_veiculo LIKE '%?%' and tipo_veiculo = 'Van'";
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, modelo_ler);
         ResultSet rs = pstmt.executeQuery();
@@ -229,7 +229,7 @@ public static void buscar_vans_pela_marca(){
         System.out.print("? - Insira a marca da van: ");
         String marca_ler = leia.nextLine();
 
-        String sql ="SELECT * FROM veiculos where marca_veiculo = ? and tipo_veiculo = 'Van'";
+        String sql ="SELECT * FROM veiculos WHERE marca_veiculo LIKE '%?%' and tipo_veiculo = 'Van'";
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, marca_ler);
         ResultSet rs = pstmt.executeQuery();

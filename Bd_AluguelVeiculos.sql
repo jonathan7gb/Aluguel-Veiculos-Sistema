@@ -27,7 +27,6 @@ SELECT * FROM aluguel_veiculos.View_todos_veiculos_manutenção;
 create view `View_todos_veiculos_alugados` as select * from veiculos where status_veiculo = 'Alugado' and situação_veiculo = 'Ativo';
 SELECT * FROM aluguel_veiculos.View_todos_veiculos_alugados;
 
-
 ---------------------------------------------------------------------------------------------------------------------------------------
 -- Veículos apagados/excluídos | Após a Remoção ela n some do BD, somente fica inativa
 

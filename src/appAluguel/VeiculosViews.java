@@ -167,7 +167,7 @@ public class VeiculosViews {
             System.out.print("? - Insira o modelo do veículo: ");
             String modelo_ler = leia.nextLine();
 
-            String sql ="SELECT * FROM veiculos where modelo_veiculo = ? ";
+            String sql ="SELECT * FROM veiculos WHERE modelo_veiculo LIKE '%?%'";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, modelo_ler);
             ResultSet rs = pstmt.executeQuery();
@@ -213,7 +213,7 @@ public class VeiculosViews {
             System.out.print("? - Insira a marca do veículo: ");
             String marca_ler = leia.nextLine();
 
-            String sql ="SELECT * FROM veiculos where marca_veiculo = ? ";
+            String sql ="SELECT * FROM veiculos WHERE marca_veiculo LIKE '%?%'";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, marca_ler);
             ResultSet rs = pstmt.executeQuery();
