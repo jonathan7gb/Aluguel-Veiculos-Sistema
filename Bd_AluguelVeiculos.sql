@@ -75,10 +75,32 @@ SELECT * FROM aluguel_veiculos.View_todas_vans_manutenção;
 ---------------------------------------------------------------------------------------------------------------------------
 -- INSERÇÕES DE DADOS
 
-INSERT INTO veiculos VALUES (default, 'Carro', 'Uno', 'Fiat', '1234ADAT', 2012, default, default), 
-(default, 'Carro', 'Focus', 'Ford', '1214JFAJ', 2019, 'Manutenção', default), (default, 'Carro', 'Fusca', 'Volkswagen', '9821KFAN', 1982, 'Alugado', default), 
-(default, 'Moto', 'S1000', 'BMW', '2135FGAS', 2022, default, default), (default, 'Moto', 'CG-125', 'Honda', '9224JFAS', 2016, 'Manutenção', default), 
-(default, 'Moto', 'XJ6', 'Yamaha', '9341JASH', 2017, 'Alugado', default), (default, 'Van', 'Sprinter', 'Mercedes Benz', '9272JMSAJ', 1999, default, default), 
-(default, 'Van', 'Master', 'Renault', '1234AJKT', 2024, 'Manutenção', default), (default, 'Van', 'Ducato', 'Fiat', '5886DATM', 2019, 'Alugado', default);
+-- Carros
+INSERT INTO veiculos VALUES 
+(default, 'Carro', 'Civic', 'Honda', 'HOND1234', 2020, 'Disponível', 'Ativo'),
+(default, 'Carro', 'Corolla', 'Toyota', 'TOYO4321', 2023, 'Alugado', 'Ativo'),
+(default, 'Carro', 'Gol', 'Volkswagen', 'VWGOL2021', 2018, 'Manutenção', 'Ativo'),
+(default, 'Carro', 'HB20', 'Hyundai', 'HYHB2001', 2017, 'Disponível', 'Ativo'),
+(default, 'Carro', 'Uno', 'Fiat', '1234ADAT', 2012, 'Disponível', 'Ativo'), 
+(default, 'Carro', 'Focus', 'Ford', '1214JFAJ', 2019, 'Manutenção', 'Ativo'), 
+(default, 'Carro', 'Fusca', 'Volkswagen', '9821KFAN', 1982, 'Alugado', 'Ativo'); 
+
+-- Motos
+INSERT INTO veiculos VALUES 
+(default, 'Moto', 'Titan 160', 'Honda', 'MOTO1111', 2021, 'Disponível', 'Ativo'),
+(default, 'Moto', 'Ninja 400', 'Kawasaki', 'KAWK400', 2022, 'Alugado', 'Ativo'),
+(default, 'Moto', 'Pop 100', 'Honda', 'POP100BR', 2015, 'Manutenção', 'Ativo'),
+(default, 'Moto', 'S1000', 'BMW', '2135FGAS', 2022, 'Disponível', 'Ativo'), 
+(default, 'Moto', 'CG-125', 'Honda', '9224JFAS', 2016, 'Manutenção', 'Ativo'), 
+(default, 'Moto', 'XJ6', 'Yamaha', '9341JASH', 2017, 'Alugado', 'Ativo');
+
+-- Vans
+INSERT INTO veiculos VALUES 
+(default, 'Van', 'Boxer', 'Peugeot', 'PEUBOX23', 2020, 'Disponível', 'Ativo'),
+(default, 'Van', 'Iveco Daily', 'Iveco', 'IVE12345', 2018, 'Alugado', 'Ativo'),
+(default, 'Van', 'Kombi', 'Volkswagen', 'KOMBIRET', 2003, 'Manutenção', 'Ativo'),
+(default, 'Van', 'Sprinter', 'Mercedes Benz', '9272JMSAJ', 1999, 'Disponível', 'Ativo'), 
+(default, 'Van', 'Master', 'Renault', '1234AJKT', 2024, 'Manutenção', 'Ativo'), 
+(default, 'Van', 'Ducato', 'Fiat', '5886DATM', 2019, 'Alugado', 'Ativo');
 
 TRUNCATE veiculos;
