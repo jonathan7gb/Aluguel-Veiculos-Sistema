@@ -35,6 +35,7 @@ public class Van {
                             System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                             System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
                             System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+                            System.out.println("   Status: " + rs.getString("status_veiculo"));
                             System.out.println("╚══════════════════════════════════════════╝");
                             Thread.sleep(350);            
                         }
@@ -70,6 +71,7 @@ public class Van {
                             System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                             System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
                             System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+                            System.out.println("   Status: " + rs.getString("status_veiculo"));
                             System.out.println("╚══════════════════════════════════════════╝");
                             Thread.sleep(350);            
                         }
@@ -105,6 +107,7 @@ public class Van {
                             System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                             System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
                             System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+                            System.out.println("   Status: " + rs.getString("status_veiculo"));
                             System.out.println("╚══════════════════════════════════════════╝");
                             Thread.sleep(350);            
                         }
@@ -150,6 +153,7 @@ public static void buscar_vans_pela_placa(){
             System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
             System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
             System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+            System.out.println("   Status: " + rs.getString("status_veiculo"));
             System.out.println("╚══════════════════════════════════════════╝");
             Thread.sleep(350);            
         }
@@ -183,9 +187,9 @@ public static void buscar_vans_pelo_modelo(){
         System.out.print("? - Insira o modelo da van: ");
         String modelo_ler = leia.nextLine();
 
-        String sql ="SELECT * FROM veiculos WHERE modelo_veiculo LIKE '%?%' and tipo_veiculo = 'Van'";
+        String sql ="SELECT * FROM veiculos WHERE modelo_veiculo LIKE ? and tipo_veiculo = 'Van'";
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, modelo_ler);
+        pstmt.setString(1, "%" + modelo_ler + "%");
         ResultSet rs = pstmt.executeQuery();
 
         System.out.println("");
@@ -196,6 +200,7 @@ public static void buscar_vans_pelo_modelo(){
             System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
             System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
             System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+            System.out.println("   Status: " + rs.getString("status_veiculo"));
             System.out.println("╚══════════════════════════════════════════╝");
             Thread.sleep(350);            
         }
@@ -229,9 +234,9 @@ public static void buscar_vans_pela_marca(){
         System.out.print("? - Insira a marca da van: ");
         String marca_ler = leia.nextLine();
 
-        String sql ="SELECT * FROM veiculos WHERE marca_veiculo LIKE '%?%' and tipo_veiculo = 'Van'";
+        String sql ="SELECT * FROM veiculos WHERE marca_veiculo LIKE ? and tipo_veiculo = 'Van'";
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, marca_ler);
+        pstmt.setString(1, "%" + marca_ler + "%");
         ResultSet rs = pstmt.executeQuery();
 
         System.out.println("");
@@ -242,6 +247,7 @@ public static void buscar_vans_pela_marca(){
             System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
             System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
             System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+            System.out.println("   Status: " + rs.getString("status_veiculo"));
             System.out.println("╚══════════════════════════════════════════╝");
             Thread.sleep(350);            
         }

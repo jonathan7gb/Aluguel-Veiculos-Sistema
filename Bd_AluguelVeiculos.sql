@@ -14,7 +14,6 @@ create table veiculos(
 
 select * from veiculos;
 
-
 ---------------------------------------------------------------------------------------------------------------------------------------
 -- Geral
 
@@ -71,3 +70,15 @@ SELECT * FROM aluguel_veiculos.View_todas_vans_alugadas;
 
 create view `View_todas_vans_manutenção` as select * from veiculos where status_veiculo = 'Manutenção' and tipo_veiculo = 'Van';
 SELECT * FROM aluguel_veiculos.View_todas_vans_manutenção;
+
+
+---------------------------------------------------------------------------------------------------------------------------
+-- INSERÇÕES DE DADOS
+
+INSERT INTO veiculos VALUES (default, 'Carro', 'Uno', 'Fiat', '1234ADAT', 2012, default, default), 
+(default, 'Carro', 'Focus', 'Ford', '1214JFAJ', 2019, 'Manutenção', default), (default, 'Carro', 'Fusca', 'Volkswagen', '9821KFAN', 1982, 'Alugado', default), 
+(default, 'Moto', 'S1000', 'BMW', '2135FGAS', 2022, default, default), (default, 'Moto', 'CG-125', 'Honda', '9224JFAS', 2016, 'Manutenção', default), 
+(default, 'Moto', 'XJ6', 'Yamaha', '9341JASH', 2017, 'Alugado', default), (default, 'Van', 'Sprinter', 'Mercedes Benz', '9272JMSAJ', 1999, default, default), 
+(default, 'Van', 'Master', 'Renault', '1234AJKT', 2024, 'Manutenção', default), (default, 'Van', 'Ducato', 'Fiat', '5886DATM', 2019, 'Alugado', default);
+
+TRUNCATE veiculos;
