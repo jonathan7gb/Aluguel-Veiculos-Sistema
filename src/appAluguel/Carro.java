@@ -32,7 +32,7 @@ public class Carro {
                                 System.out.println("╔══════════════════════════════════════════╗");
                                 System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                                 System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                                System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                                 System.out.println("╚══════════════════════════════════════════╝");
                                 Thread.sleep(350);            
                             }
@@ -67,7 +67,7 @@ public class Carro {
                                 System.out.println("╔══════════════════════════════════════════╗");
                                 System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                                 System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                                System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                                 System.out.println("╚══════════════════════════════════════════╝");
                                 Thread.sleep(350);            
                             }
@@ -102,7 +102,7 @@ public class Carro {
                                 System.out.println("╔══════════════════════════════════════════╗");
                                 System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                                 System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                                System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                                 System.out.println("╚══════════════════════════════════════════╝");
                                 Thread.sleep(350);            
                             }
@@ -129,7 +129,7 @@ public class Carro {
             Scanner leia = new Scanner(System.in);
 
             Thread.sleep(500);
-            System.out.println("╔══════════════════════════════════════════╗");
+            System.out.println("\n╔══════════════════════════════════════════╗");
             System.out.println("             BUSCAR PELA PLACA              ");
             System.out.println("╚══════════════════════════════════════════╝");
             System.out.print("? - Insira a placa do carro: ");
@@ -138,7 +138,7 @@ public class Carro {
             String sql ="SELECT * FROM veiculos where placa_veiculo = ? and tipo_veiculo = 'Carro'";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, placa_ler);
-            ResultSet rs = pstmt.executeQuery(sql);
+            ResultSet rs = pstmt.executeQuery();
 
             System.out.println("");
             
@@ -147,7 +147,7 @@ public class Carro {
                 System.out.println("╔══════════════════════════════════════════╗");
                 System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                 System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                 System.out.println("╚══════════════════════════════════════════╝");
                 Thread.sleep(350);            
             }
@@ -175,7 +175,7 @@ public class Carro {
             Scanner leia = new Scanner(System.in);
 
             Thread.sleep(500);
-            System.out.println("╔══════════════════════════════════════════╗");
+            System.out.println("\n╔══════════════════════════════════════════╗");
             System.out.println("             BUSCAR PELO MODELO             ");
             System.out.println("╚══════════════════════════════════════════╝");
             System.out.print("? - Insira o modelo do carro: ");
@@ -184,7 +184,7 @@ public class Carro {
             String sql ="SELECT * FROM veiculos where modelo_veiculo = ? and tipo_veiculo = 'Carro'";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, modelo_ler);
-            ResultSet rs = pstmt.executeQuery(sql);
+            ResultSet rs = pstmt.executeQuery();
 
             System.out.println("");
             
@@ -193,7 +193,7 @@ public class Carro {
                 System.out.println("╔══════════════════════════════════════════╗");
                 System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                 System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                 System.out.println("╚══════════════════════════════════════════╝");
                 Thread.sleep(350);            
             }
@@ -221,7 +221,7 @@ public class Carro {
             Scanner leia = new Scanner(System.in);
 
             Thread.sleep(500);
-            System.out.println("╔══════════════════════════════════════════╗");
+            System.out.println("\n╔══════════════════════════════════════════╗");
             System.out.println("              BUSCAR PELA MARCA             ");
             System.out.println("╚══════════════════════════════════════════╝");
             System.out.print("? - Insira a marca do carro: ");
@@ -230,7 +230,7 @@ public class Carro {
             String sql ="SELECT * FROM veiculos where marca_veiculo = ? and tipo_veiculo = 'Carro'";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, marca_ler);
-            ResultSet rs = pstmt.executeQuery(sql);
+            ResultSet rs = pstmt.executeQuery();
 
             System.out.println("");
             
@@ -239,7 +239,7 @@ public class Carro {
                 System.out.println("╔══════════════════════════════════════════╗");
                 System.out.printf("   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                 System.out.println("   Tipo: " + rs.getString("tipo_veiculo") );
-                System.out.println("   Ano de Fabricação: " + rs.getString("ano_fabricacao_veiculo"));
+                System.out.println("   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                 System.out.println("╚══════════════════════════════════════════╝");
                 Thread.sleep(350);            
             }
