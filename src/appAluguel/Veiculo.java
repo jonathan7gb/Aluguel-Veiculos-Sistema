@@ -129,7 +129,8 @@ public class Veiculo {
                     menu_busca_todos();
                     System.out.print("? - Sua escolha: ");
                     escolhaBuscaTodos = scNum.nextInt();
-                    
+                    Thread.sleep(300); 
+
                     switch(escolhaBuscaTodos) {
                     	case 1:
                             VeiculosViews.todos_veiculos_disponiveis();
@@ -141,10 +142,13 @@ public class Veiculo {
                             VeiculosViews.View_todos_veiculos_manutenção();
                     		break;
                     	case 4:
+                            VeiculosViews.buscar_veiculo_placa();
                     		break;
                     	case 5:
+                            VeiculosViews.buscar_veiculo_modelo();
                     		break;
                     	case 6:
+                            VeiculosViews.buscar_veiculo_marca();
                     		break;
                     	case 7:
                             System.out.println("");
@@ -159,6 +163,7 @@ public class Veiculo {
                     Carro.menu_busca_carro();
                     System.out.print("? - Sua escolha: ");
                     int escolhaBuscaCarro = scNum.nextInt();
+                    Thread.sleep(300); 
 
                     switch(escolhaBuscaCarro) {
                     	case 1:
@@ -171,10 +176,13 @@ public class Veiculo {
                             Carro.todos_carros_manutencao();
                     		break;
                     	case 4:
+                            Carro.buscar_carro_pela_placa();
                     		break;
                     	case 5:
+                            Carro.buscar_carro_pelo_modelo();;
                     		break;
                     	case 6:
+                            Carro.buscar_carro_pela_marca();
                     		break;
                     	case 7:
                             System.out.println("");
@@ -189,6 +197,7 @@ public class Veiculo {
                     Moto.menu_busca_moto();
                     System.out.print("? - Sua escolha: ");
                     int escolhaBuscaMoto = scNum.nextInt();
+                    Thread.sleep(300); 
 
                     switch(escolhaBuscaMoto) {
                     	case 1:
@@ -201,10 +210,13 @@ public class Veiculo {
                             Moto.todas_motos_manutencao();
                     		break;
                     	case 4:
+                            Moto.buscar_motos_pela_placa();
                     		break;
                     	case 5:
+                            Moto.buscar_motos_pelo_modelo();
                     		break;
                     	case 6:
+                            Moto.buscar_motos_pela_marca();
                     		break;
                     	case 7:
                             System.out.println("");
@@ -219,6 +231,7 @@ public class Veiculo {
                 	Van.menu_busca_van();
                     System.out.print("? - Sua escolha: ");
                     int escolhaBuscaVan = scNum.nextInt();
+                    Thread.sleep(300); 
 
                     switch(escolhaBuscaVan) {
                     	case 1:
@@ -231,10 +244,13 @@ public class Veiculo {
                             Van.todas_vans_manutencao();
                     		break;
                     	case 4:
+                            Van.buscar_vans_pela_placa();
                     		break;
                     	case 5:
+                            Van.buscar_vans_pelo_modelo();
                     		break;
                     	case 6:
+                            Van.buscar_vans_pela_marca();
                     		break;
                     	case 7:
                             System.out.println("");
@@ -246,7 +262,8 @@ public class Veiculo {
                     break;
 
                 case 5:
-                    System.out.println("\n==== Visualizar Todos Apagados ====");
+                    System.out.println("\n==== Visualizar Todos Apagados ====\n");
+                    VeiculosViews.View_todos_veiculos_apagados();
                     break;
             
                 case 6:
@@ -263,24 +280,43 @@ public class Veiculo {
     	}
 
         public static void menu_busca_principal(){
-            System.out.println("\n==== Buscar Veículos ====");
-            System.out.println("1 - Visualizar Todos");
-            System.out.println("2 - Visualizar Carros");
-            System.out.println("3 - Visualizar Motos");
-            System.out.println("4 - Visualizar Vans");
-            System.out.println("5 - Visualizar Todos Apagados");
-            System.out.println("6 - Voltar ao Menu Principal");
+            try{
+                System.out.println("\n==== Buscar Veículos ====");
+                System.out.println("1 - Visualizar Todos");
+                Thread.sleep(100); 
+                System.out.println("2 - Visualizar Carros");
+                Thread.sleep(100); 
+                System.out.println("3 - Visualizar Motos");
+                Thread.sleep(100); 
+                System.out.println("4 - Visualizar Vans");
+                Thread.sleep(100); 
+                System.out.println("5 - Visualizar Todos Apagados");
+                Thread.sleep(100); 
+                System.out.println("6 - Voltar ao Menu Principal");
+                Thread.sleep(300); 
+            }catch (Exception e) {
+		    }
         }
 
         public static void menu_busca_todos(){
-            System.out.println("\n==== Visualizar Todos ====");
-            System.out.println("1 - Disponíveis");
-            System.out.println("2 - Alugados");
-            System.out.println("3 - Em Manutenção");
-            System.out.println("4 - Buscar pela Placa");
-            System.out.println("5 - Buscar pelo Modelo");
-            System.out.println("6 - Buscar pela Marca");
-            System.out.println("7 - Voltar ao Menu de Busca");
+            try {
+                System.out.println("\n==== Visualizar Todos ====");
+                System.out.println("1 - Disponíveis");
+                Thread.sleep(300);
+                System.out.println("2 - Alugados");
+                Thread.sleep(300);
+                System.out.println("3 - Em Manutenção");
+                Thread.sleep(300);
+                System.out.println("4 - Buscar pela Placa");
+                Thread.sleep(300);
+                System.out.println("5 - Buscar pelo Modelo");
+                Thread.sleep(300);
+                System.out.println("6 - Buscar pela Marca");
+                Thread.sleep(300);
+                System.out.println("7 - Voltar ao Menu de Busca");
+                Thread.sleep(300);
+            } catch (Exception e) {
+            }
         }
 
 
