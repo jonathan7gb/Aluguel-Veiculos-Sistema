@@ -51,7 +51,7 @@ public class Main {
 	        System.out.println("╚═════════════════════════════════════╝");
 			System.out.println("1 - 📝 Cadastrar Veículo");  
 			System.out.println("2 - 🔍 Buscar Veículos");  
-			System.out.println("3 - ✏️ Alugar Veículo");  
+			System.out.println("3 - 📝 Alugar Veículo");  
 			System.out.println("4 - ✏️ Editar Veículo");  
 			System.out.println("5 - 🗑️ Remover Veículo");  
 			System.out.println("0 - 👋 Sair do Sistema"); 

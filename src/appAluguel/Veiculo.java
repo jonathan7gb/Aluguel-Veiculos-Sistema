@@ -170,29 +170,29 @@ public class Veiculo {
                     break;
 
                 case 2:
-                    Carro.menu_busca_carro();
+                    CarrosViews.menu_busca_carro();
                     System.out.print("? - Sua escolha: ");
                     int escolhaBuscaCarro = scNum.nextInt();
                     Thread.sleep(300); 
 
                     switch(escolhaBuscaCarro) {
                     	case 1:
-                            Carro.todos_carros_disponiveis();
+                            CarrosViews.todos_carros_disponiveis();
                             break;
                     	case 2:
-                            Carro.todos_carros_alugados();
+                            CarrosViews.todos_carros_alugados();
                     		break;
                     	case 3:
-                            Carro.todos_carros_manutencao();
+                            CarrosViews.todos_carros_manutencao();
                     		break;
                     	case 4:
-                            Carro.buscar_carro_pela_placa();
+                            CarrosViews.buscar_carro_pela_placa();
                     		break;
                     	case 5:
-                            Carro.buscar_carro_pelo_modelo();;
+                            CarrosViews.buscar_carro_pelo_modelo();;
                     		break;
                     	case 6:
-                            Carro.buscar_carro_pela_marca();
+                            CarrosViews.buscar_carro_pela_marca();
                     		break;
                     	case 7:
                             System.out.println("");
@@ -206,29 +206,29 @@ public class Veiculo {
                     break;
 
                 case 3:
-                    Moto.menu_busca_moto();
+                    MotosViews.menu_busca_moto();
                     System.out.print("? - Sua escolha: ");
                     int escolhaBuscaMoto = scNum.nextInt();
                     Thread.sleep(300); 
 
                     switch(escolhaBuscaMoto) {
                     	case 1:
-                            Moto.todas_motos_disponiveis();
+                            MotosViews.todas_motos_disponiveis();
                             break;
                     	case 2:
-                            Moto.todas_motos_alugados();
+                            MotosViews.todas_motos_alugados();
                     		break;
                     	case 3:
-                            Moto.todas_motos_manutencao();
+                            MotosViews.todas_motos_manutencao();
                     		break;
                     	case 4:
-                            Moto.buscar_motos_pela_placa();
+                            MotosViews.buscar_motos_pela_placa();
                     		break;
                     	case 5:
-                            Moto.buscar_motos_pelo_modelo();
+                            MotosViews.buscar_motos_pelo_modelo();
                     		break;
                     	case 6:
-                            Moto.buscar_motos_pela_marca();
+                            MotosViews.buscar_motos_pela_marca();
                     		break;
                     	case 7:
                             System.out.println("");
@@ -242,29 +242,29 @@ public class Veiculo {
                     break;
 
                 case 4:
-                	Van.menu_busca_van();
+                	VansViews.menu_busca_van();
                     System.out.print("? - Sua escolha: ");
                     int escolhaBuscaVan = scNum.nextInt();
                     Thread.sleep(300); 
 
                     switch(escolhaBuscaVan) {
                     	case 1:
-                            Van.todas_vans_disponiveis();
+                            VansViews.todas_vans_disponiveis();
                             break;
                     	case 2:
-                            Van.todas_vans_alugados();
+                            VansViews.todas_vans_alugados();
                     		break;
                     	case 3:
-                            Van.todas_vans_manutencao();
+                            VansViews.todas_vans_manutencao();
                     		break;
                     	case 4:
-                            Van.buscar_vans_pela_placa();
+                            VansViews.buscar_vans_pela_placa();
                     		break;
                     	case 5:
-                            Van.buscar_vans_pelo_modelo();
+                            VansViews.buscar_vans_pelo_modelo();
                     		break;
                     	case 6:
-                            Van.buscar_vans_pela_marca();
+                            VansViews.buscar_vans_pela_marca();
                     		break;
                     	case 7:
                             System.out.println("");

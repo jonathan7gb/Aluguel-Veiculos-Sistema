@@ -4,7 +4,7 @@ import conexaoBanco.Conexao;
 import java.sql.*;
 import java.util.*;
 
-public class Carro {
+public class CarrosViews {
 
     public static void menu_busca_carro(){
     	System.out.println("\n╔═════════════════════════════════════╗");

@@ -3,7 +3,7 @@ import conexaoBanco.*;
 import java.sql.*;
 import java.util.*;
 
-public class Van {
+public class VansViews {
 
     public static  void menu_busca_van(){
     	System.out.println("\n╔═════════════════════════════════════╗");
