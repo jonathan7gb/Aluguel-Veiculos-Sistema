@@ -1,29 +1,15 @@
-package appAluguel;
+package views;
 import conexaoBanco.*;
 import java.sql.*;
 import java.util.*;
 
-public class MotosViews {
+public class VeiculosViews {
 
-    public static  void menu_busca_moto(){
-    	System.out.println("\n╔═════════════════════════════════════╗");
-        System.out.println("║          VISUALIZAR MOTOS           ║");
-        System.out.println("╚═════════════════════════════════════╝");
-        System.out.println("1 - Disponíveis");
-        System.out.println("2 - Alugadas");
-        System.out.println("3 - Em Manutenção");
-        System.out.println("4 - Buscar pela Placa");
-        System.out.println("5 - Buscar pelo Modelo");
-        System.out.println("6 - Buscar pela Marca");
-        System.out.println("7 - Voltar ao Menu de Busca");
-        System.out.println("══════════════════════════════════════");
-    }
-
-    public static void todas_motos_disponiveis(){
+    public static void todos_veiculos_disponiveis(){
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
 
-            String sql ="SELECT * FROM aluguel_veiculos.View_todos_motos_disponiveis";
+            String sql ="SELECT * FROM aluguel_veiculos.view_todos_veiculos_disponiveis";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -55,16 +41,16 @@ public class MotosViews {
 
 //----------------------------------------------------------------------------------------
 
- public static void todas_motos_alugados(){
+    public static void todos_veiculos_alugados(){
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
 
-            String sql ="SELECT * FROM aluguel_veiculos.View_todos_motos_alugados";
+            String sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_alugados";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
             System.out.println("");
-                        
+            
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -83,7 +69,7 @@ public class MotosViews {
                 System.out.println("           NENHUM CARRO ENCONTRADO       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
-    
+            
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,35 +77,35 @@ public class MotosViews {
 
 //----------------------------------------------------------------------------------------
 
- public static void todas_motos_manutencao(){
+    public static void View_todos_veiculos_manutenção(){
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
 
-           String sql ="SELECT * FROM aluguel_veiculos.View_todos_motos_manutenção";
-           Statement stmt = conn.createStatement();
-           ResultSet rs = stmt.executeQuery(sql);
+            String sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_manutenção";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
 
-          System.out.println("");
-                        
-          System.out.print("╔═══════════════════════════════════════════");
-          while (rs.next()) {
-              encontrado = true;
-              System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
-              System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
-              System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
-              System.out.println("║   Status: " + rs.getString("status_veiculo"));
-              System.out.print("╠═══════════════════════════════════════════");
-              Thread.sleep(350);            
-          }
-          if(encontrado == true) {
-              System.out.println("\n");
-          }
-          if(encontrado != true) {
-          	System.out.println("╗");
-              System.out.println("           NENHUM CARRO ENCONTRADO       ");
-              System.out.println("╚═══════════════════════════════════════════╝\n");
-          }
-    
+            System.out.println("");
+            
+            System.out.print("╔═══════════════════════════════════════════");
+            while (rs.next()) {
+                encontrado = true;
+                System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
+                System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+                System.out.println("║   Status: " + rs.getString("status_veiculo"));
+                System.out.print("╠═══════════════════════════════════════════");
+                Thread.sleep(350);            
+            }
+            if(encontrado == true) {
+                System.out.println("\n");
+            }
+            if(encontrado != true) {
+            	System.out.println("╗");
+                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+                System.out.println("╚═══════════════════════════════════════════╝\n");
+            }
+            
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -127,7 +113,7 @@ public class MotosViews {
 
 //----------------------------------------------------------------------------------------
 
-    public static void buscar_motos_pela_placa(){
+    public static void buscar_veiculo_placa(){
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
 
@@ -137,10 +123,10 @@ public class MotosViews {
             System.out.println("\n╔══════════════════════════════════════════╗");
             System.out.println("             BUSCAR PELA PLACA              ");
             System.out.println("╚══════════════════════════════════════════╝");
-            System.out.print("? - Insira a placa da moto: ");
+            System.out.print("? - Insira a placa do veículo: ");
             String placa_ler = leia.nextLine();
 
-            String sql ="SELECT * FROM veiculos where placa_veiculo = ? and tipo_veiculo = 'Moto'";
+            String sql ="SELECT * FROM veiculos where placa_veiculo = ? ";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, placa_ler);
             ResultSet rs = pstmt.executeQuery();
@@ -175,7 +161,7 @@ public class MotosViews {
     
 //----------------------------------------------------------------------------------------
 
-    public static void buscar_motos_pelo_modelo(){
+    public static void buscar_veiculo_modelo(){
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
 
@@ -185,10 +171,10 @@ public class MotosViews {
             System.out.println("\n╔══════════════════════════════════════════╗");
             System.out.println("             BUSCAR PELO MODELO             ");
             System.out.println("╚══════════════════════════════════════════╝");
-            System.out.print("? - Insira o modelo da moto: ");
+            System.out.print("? - Insira o modelo do veículo: ");
             String modelo_ler = leia.nextLine();
 
-            String sql ="SELECT * FROM veiculos WHERE modelo_veiculo LIKE ? and tipo_veiculo = 'Moto'";
+            String sql ="SELECT * FROM veiculos WHERE modelo_veiculo LIKE ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "%" + modelo_ler + "%");
             ResultSet rs = pstmt.executeQuery();
@@ -223,7 +209,7 @@ public class MotosViews {
 
 //----------------------------------------------------------------------------------------
 
-    public static void buscar_motos_pela_marca(){
+    public static void buscar_veiculo_marca(){
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
 
@@ -233,10 +219,10 @@ public class MotosViews {
             System.out.println("\n╔══════════════════════════════════════════╗");
             System.out.println("              BUSCAR PELA MARCA             ");
             System.out.println("╚══════════════════════════════════════════╝");
-            System.out.print("? - Insira a marca da moto: ");
+            System.out.print("? - Insira a marca do veículo: ");
             String marca_ler = leia.nextLine();
 
-            String sql ="SELECT * FROM veiculos WHERE marca_veiculo LIKE ? and tipo_veiculo = 'Moto'";
+            String sql ="SELECT * FROM veiculos WHERE marca_veiculo LIKE ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "%" + marca_ler + "%");
             ResultSet rs = pstmt.executeQuery();
@@ -268,5 +254,42 @@ public class MotosViews {
             e.printStackTrace();
         }
     }
+
+//----------------------------------------------------------------------------------------
+
+public static void View_todos_veiculos_apagados(){
+    try (Connection conn = Conexao.getConexao()) {
+        boolean encontrado = false;
+
+        Thread.sleep(500);
+        String sql ="SELECT * FROM aluguel_veiculos.View_todos_veiculos_inativos";
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+
+        System.out.println("");
+        
+        System.out.print("╔═══════════════════════════════════════════");
+        while (rs.next()) {
+            encontrado = true;
+            System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+            System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
+            System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+            System.out.println("║   Status: " + rs.getString("status_veiculo"));
+            System.out.print("╠═══════════════════════════════════════════");
+            Thread.sleep(350);            
+        }
+        if(encontrado == true) {
+            System.out.println("\n");
+        }
+        if(encontrado != true) {
+        	System.out.println("╗");
+            System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            System.out.println("╚═══════════════════════════════════════════╝\n");
+        }
+        
+    }catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 
 }

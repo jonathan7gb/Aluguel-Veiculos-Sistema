@@ -1,5 +1,4 @@
-package appAluguel;
-
+package views;
 import conexaoBanco.Conexao;
 import java.sql.*;
 import java.util.*;

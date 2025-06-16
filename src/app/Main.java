@@ -1,7 +1,8 @@
-package appAluguel;
-import conexaoBanco.*;
+package app;
 import java.util.*;
-import java.sql.*;
+import model.*;
+import services.*;
+import views.*;
 
 public class Main {
 
@@ -15,10 +16,10 @@ public class Main {
     	escolhaMenu = Main.menuAPP();
 		switch (escolhaMenu) {
 			case 1:
-				Veiculo.cadastrar_veiculo(scStr, scNum);
+				GerenciadorSistema.cadastrar_veiculo(scStr, scNum);
 				break;
 			case 2:
-				Veiculo.buscar_veiculos(scStr, scNum);
+				GerenciadorSistema.buscar_veiculos(scStr, scNum);
 				break;
 			case 3:
 				break;
