@@ -158,7 +158,9 @@ public static void buscar_vans_pela_placa(){
             System.out.println("║        NENHUMA VAN ENCONTRADA       ║");
             System.out.println("╚═════════════════════════════════════╝\n");
         }
-    }catch (Exception e) {
+    }catch (InputMismatchException e) {
+        System.out.println("🚫 Entrada inválida!");
+   }catch (Exception e) {
         e.printStackTrace();
     }
 }
@@ -202,7 +204,9 @@ public static void buscar_vans_pelo_modelo(){
             System.out.println("║        NENHUMA VAN ENCONTRADA       ║");
             System.out.println("╚═════════════════════════════════════╝\n");
         }
-    }catch (Exception e) {
+    }catch (InputMismatchException e) {
+        System.out.println("🚫 Entrada inválida!");
+   }catch (Exception e) {
         e.printStackTrace();
     }
 }
@@ -246,7 +250,9 @@ public static void buscar_vans_pela_marca(){
             System.out.println("║        NENHUMA VAN ENCONTRADA       ║");
             System.out.println("╚═════════════════════════════════════╝\n");
         }
-    }catch (Exception e) {
+    }catch (InputMismatchException e) {
+        System.out.println("🚫 Entrada inválida!");
+   }catch (Exception e) {
         e.printStackTrace();
     }
 }

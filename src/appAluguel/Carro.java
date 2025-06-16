@@ -159,7 +159,9 @@ public class Carro {
                 System.out.println("║       NENHUM CARRO ENCONTRADO       ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -203,7 +205,9 @@ public class Carro {
                 System.out.println("║       NENHUM CARRO ENCONTRADO       ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -247,7 +251,9 @@ public class Carro {
                 System.out.println("║       NENHUM CARRO ENCONTRADO       ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }

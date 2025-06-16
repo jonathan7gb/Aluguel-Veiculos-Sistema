@@ -274,7 +274,9 @@ public class Veiculo {
                     break;
             }
     	
-			}catch (Exception e) {
+			}catch (InputMismatchException e) {
+                System.out.println("🚫 Entrada inválida!");
+           }catch (Exception e) {
 		        e.printStackTrace();
 		    }
     	}

@@ -145,7 +145,9 @@ public class VeiculosViews {
                 System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -189,7 +191,9 @@ public class VeiculosViews {
                 System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -233,7 +237,9 @@ public class VeiculosViews {
                 System.out.println("║      NENHUM VEÍCULO ENCONTRADO      ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -158,7 +158,9 @@ public class Moto {
                 System.out.println("║       NENHUMA MOTO ENCONTRADA       ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -202,7 +204,9 @@ public class Moto {
                 System.out.println("║       NENHUMA MOTO ENCONTRADA       ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -246,7 +250,9 @@ public class Moto {
                 System.out.println("║       NENHUMA MOTO ENCONTRADA       ║");
                 System.out.println("╚═════════════════════════════════════╝\n");
             }
-        }catch (Exception e) {
+        }catch (InputMismatchException e) {
+            System.out.println("🚫 Entrada inválida!");
+       }catch (Exception e) {
             e.printStackTrace();
         }
     }
