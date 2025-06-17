@@ -15,6 +15,9 @@ public class VeiculosViews {
 
             System.out.println("");
                         
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║    TODOS OS VEÍCULOS DISPONÍVEIS    ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -51,6 +54,9 @@ public class VeiculosViews {
 
             System.out.println("");
             
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║      TODOS OS VEÍCULOS ALUGADOS     ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -87,6 +93,9 @@ public class VeiculosViews {
 
             System.out.println("");
             
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║   TODOS OS VEÍCULOS EM MANUTENÇÃO    ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;

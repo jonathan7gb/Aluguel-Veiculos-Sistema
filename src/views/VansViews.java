@@ -32,14 +32,14 @@ public class VansViews {
             System.out.println("╔═════════════════════════════════════╗");
 	        System.out.println("║      TODAS AS VANS DISPONÍVEIS      ║");
 	        System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("╔═══════════════════════════════════════════");
+            System.out.print("╔══════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
                 System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                 System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
                 System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                 System.out.println("║   Status: " + rs.getString("status_veiculo"));
-                System.out.print("╠═══════════════════════════════════════════");
+                System.out.print("╠══════════════════════════════════════");
                 Thread.sleep(350);            
             }
             if(encontrado == true) {
@@ -48,7 +48,7 @@ public class VansViews {
             if(encontrado != true) {
             	System.out.println("╗");
                 System.out.println("            NENHUMA VAN ENCONTRADA       ");
-                System.out.println("╚═══════════════════════════════════════════╝\n");
+                System.out.println("╚══════════════════════════════════════╝\n");
             }
             
         }catch (Exception e) {
@@ -62,7 +62,7 @@ public class VansViews {
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
 
-            String sql ="SELECT * FROM aluguel_veiculos.View_todas_vans_alugados";
+            String sql ="SELECT * FROM aluguel_veiculos.View_todas_vans_alugadas";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -71,14 +71,14 @@ public class VansViews {
             System.out.println("╔═════════════════════════════════════╗");
 	        System.out.println("║       TODAS AS VANS ALUGADAS        ║");
 	        System.out.println("╚═════════════════════════════════════╝");            
-            System.out.print("╔═══════════════════════════════════════════");
+            System.out.print("╔══════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
                 System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                 System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
                 System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                 System.out.println("║   Status: " + rs.getString("status_veiculo"));
-                System.out.print("╠═══════════════════════════════════════════");
+                System.out.print("╠══════════════════════════════════════");
                 Thread.sleep(350);            
             }
             if(encontrado == true) {
@@ -87,7 +87,7 @@ public class VansViews {
             if(encontrado != true) {
             	System.out.println("╗");
                 System.out.println("            NENHUMA VAN ENCONTRADA       ");
-                System.out.println("╚═══════════════════════════════════════════╝\n");
+                System.out.println("╚══════════════════════════════════════╝\n");
             }  
     
         }catch (Exception e) {
@@ -110,14 +110,14 @@ public class VansViews {
             System.out.println("╔═════════════════════════════════════╗");
 	        System.out.println("║     TODAS AS VANS EM MANUTENÇÃO     ║");
 	        System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("╔═══════════════════════════════════════════");
+            System.out.print("╔══════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
                 System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
                 System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
                 System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
                 System.out.println("║   Status: " + rs.getString("status_veiculo"));
-                System.out.print("╠═══════════════════════════════════════════");
+                System.out.print("╠══════════════════════════════════════");
                 Thread.sleep(350);            
             }
             if(encontrado == true) {
@@ -126,7 +126,7 @@ public class VansViews {
             if(encontrado != true) {
             	System.out.println("╗");
                 System.out.println("            NENHUMA VAN ENCONTRADA       ");
-                System.out.println("╚═══════════════════════════════════════════╝\n");
+                System.out.println("╚══════════════════════════════════════╝\n");
             }
     
         }catch (Exception e) {
@@ -156,14 +156,14 @@ public static void buscar_vans_pela_placa(){
 
         System.out.println("");
         
-        System.out.print("╔═══════════════════════════════════════════");
+        System.out.print("╔══════════════════════════════════════");
         while (rs.next()) {
             encontrado = true;
             System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
             System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
             System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
             System.out.println("║   Status: " + rs.getString("status_veiculo"));
-            System.out.print("╠═══════════════════════════════════════════");
+            System.out.print("╠══════════════════════════════════════");
             Thread.sleep(350);            
         }
         if(encontrado == true) {
@@ -172,7 +172,7 @@ public static void buscar_vans_pela_placa(){
         if(encontrado != true) {
         	System.out.println("╗");
             System.out.println("            NENHUMA VAN ENCONTRADA       ");
-            System.out.println("╚═══════════════════════════════════════════╝\n");
+            System.out.println("╚══════════════════════════════════════╝\n");
         }
         
     }catch (InputMismatchException e) {
@@ -204,14 +204,14 @@ public static void buscar_vans_pelo_modelo(){
 
         System.out.println("");
         
-        System.out.print("╔═══════════════════════════════════════════");
+        System.out.print("╔══════════════════════════════════════");
         while (rs.next()) {
             encontrado = true;
             System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
             System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
             System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
             System.out.println("║   Status: " + rs.getString("status_veiculo"));
-            System.out.print("╠═══════════════════════════════════════════");
+            System.out.print("╠══════════════════════════════════════");
             Thread.sleep(350);            
         }
         if(encontrado == true) {
@@ -220,7 +220,7 @@ public static void buscar_vans_pelo_modelo(){
         if(encontrado != true) {
         	System.out.println("╗");
             System.out.println("            NENHUMA VAN ENCONTRADA       ");
-            System.out.println("╚═══════════════════════════════════════════╝\n");
+            System.out.println("╚══════════════════════════════════════╝\n");
         }
         
     }catch (InputMismatchException e) {
@@ -252,14 +252,14 @@ public static void buscar_vans_pela_marca(){
 
         System.out.println("");
         
-        System.out.print("╔═══════════════════════════════════════════");
+        System.out.print("╔══════════════════════════════════════");
         while (rs.next()) {
             encontrado = true;
             System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
             System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
             System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
             System.out.println("║   Status: " + rs.getString("status_veiculo"));
-            System.out.print("╠═══════════════════════════════════════════");
+            System.out.print("╠══════════════════════════════════════");
             Thread.sleep(350);            
         }
         if(encontrado == true) {
@@ -268,7 +268,7 @@ public static void buscar_vans_pela_marca(){
         if(encontrado != true) {
         	System.out.println("╗");
             System.out.println("            NENHUMA VAN ENCONTRADA       ");
-            System.out.println("╚═══════════════════════════════════════════╝\n");
+            System.out.println("╚══════════════════════════════════════╝\n");
         }
         
     }catch (InputMismatchException e) {
