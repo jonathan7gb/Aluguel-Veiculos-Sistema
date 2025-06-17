@@ -16,4 +16,4 @@
    ```bash
    cd Aluguel-Veiculos-Sistema
    ```
-2. Acesse a pasta do projeto em alguma IDE (VSCode ou Eclipse) e execute o arquivo Main.Java .
+2. Acesse a pasta do projeto em alguma IDE (VSCode ou Eclipse), entre na pasta ``src``, agora entre na ``app`` e execute o arquivo Main.Java .
