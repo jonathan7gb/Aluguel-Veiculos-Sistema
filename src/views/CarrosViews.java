@@ -28,7 +28,10 @@ public class CarrosViews {
                 ResultSet rs = stmt.executeQuery(sql);
 
                 System.out.println("");
-                            
+                
+                System.out.println("╔═════════════════════════════════════╗");
+    	        System.out.println("║     TODOS OS CARROS DISPONÍVEIS     ║");
+    	        System.out.println("╚═════════════════════════════════════╝");
                 System.out.print("╔═══════════════════════════════════════════");
                 while (rs.next()) {
                     encontrado = true;
@@ -65,6 +68,9 @@ public class CarrosViews {
 
                 System.out.println("");
                 
+                System.out.println("╔═════════════════════════════════════╗");
+    	        System.out.println("║      TODOS OS CARROS ALUGADOS       ║");
+    	        System.out.println("╚═════════════════════════════════════╝");
                 System.out.print("╔═══════════════════════════════════════════");
                 while (rs.next()) {
                     encontrado = true;
@@ -102,7 +108,10 @@ public class CarrosViews {
                 ResultSet rs = stmt.executeQuery(sql);
 
                 System.out.println("");
-                            
+                 
+                System.out.println("╔═════════════════════════════════════╗");
+    	        System.out.println("║    TODOS OS CARROS EM MANUTENÇÃO    ║");
+    	        System.out.println("╚═════════════════════════════════════╝");
                 System.out.print("╔═══════════════════════════════════════════");
                 while (rs.next()) {
                     encontrado = true;

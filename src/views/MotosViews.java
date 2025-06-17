@@ -28,7 +28,10 @@ public class MotosViews {
             ResultSet rs = stmt.executeQuery(sql);
 
             System.out.println("");
-                        
+            
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║     TODAS AS MOTOS DISPONÍVEIS      ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -44,7 +47,7 @@ public class MotosViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            	System.out.println("           NENHUMA MOTO ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
     
@@ -64,7 +67,10 @@ public class MotosViews {
             ResultSet rs = stmt.executeQuery(sql);
 
             System.out.println("");
-                        
+                  
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║      TODAS AS MOTOS ALUGADAS        ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -80,7 +86,7 @@ public class MotosViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            	System.out.println("           NENHUMA MOTO ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
     
@@ -100,7 +106,10 @@ public class MotosViews {
            ResultSet rs = stmt.executeQuery(sql);
 
           System.out.println("");
-                        
+                       
+          System.out.println("╔═════════════════════════════════════╗");
+	      System.out.println("║    TODAS AS MOTOS EM MANUTENÇÃO     ║");
+	      System.out.println("╚═════════════════════════════════════╝");
           System.out.print("╔═══════════════════════════════════════════");
           while (rs.next()) {
               encontrado = true;
@@ -116,7 +125,7 @@ public class MotosViews {
           }
           if(encontrado != true) {
           	System.out.println("╗");
-              System.out.println("           NENHUM CARRO ENCONTRADO       ");
+              System.out.println("           NENHUMA MOTO ENCONTRADA       ");
               System.out.println("╚═══════════════════════════════════════════╝\n");
           }
     
@@ -162,7 +171,7 @@ public class MotosViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            	System.out.println("           NENHUMA MOTO ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
             
@@ -210,7 +219,7 @@ public class MotosViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            	System.out.println("           NENHUMA MOTO ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
             
@@ -258,7 +267,7 @@ public class MotosViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            	System.out.println("           NENHUMA MOTO ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
             

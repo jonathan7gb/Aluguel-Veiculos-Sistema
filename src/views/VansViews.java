@@ -29,6 +29,9 @@ public class VansViews {
 
             System.out.println("");
             
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║      TODAS AS VANS DISPONÍVEIS      ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -44,7 +47,7 @@ public class VansViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+                System.out.println("            NENHUMA VAN ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
             
@@ -64,7 +67,10 @@ public class VansViews {
             ResultSet rs = stmt.executeQuery(sql);
 
             System.out.println("");
-                        
+
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║       TODAS AS VANS ALUGADAS        ║");
+	        System.out.println("╚═════════════════════════════════════╝");            
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -80,7 +86,7 @@ public class VansViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+                System.out.println("            NENHUMA VAN ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }  
     
@@ -101,6 +107,9 @@ public class VansViews {
 
             System.out.println("");
             
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║     TODAS AS VANS EM MANUTENÇÃO     ║");
+	        System.out.println("╚═════════════════════════════════════╝");
             System.out.print("╔═══════════════════════════════════════════");
             while (rs.next()) {
                 encontrado = true;
@@ -116,7 +125,7 @@ public class VansViews {
             }
             if(encontrado != true) {
             	System.out.println("╗");
-                System.out.println("           NENHUM CARRO ENCONTRADO       ");
+                System.out.println("            NENHUMA VAN ENCONTRADA       ");
                 System.out.println("╚═══════════════════════════════════════════╝\n");
             }
     
@@ -162,7 +171,7 @@ public static void buscar_vans_pela_placa(){
         }
         if(encontrado != true) {
         	System.out.println("╗");
-            System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            System.out.println("            NENHUMA VAN ENCONTRADA       ");
             System.out.println("╚═══════════════════════════════════════════╝\n");
         }
         
@@ -210,7 +219,7 @@ public static void buscar_vans_pelo_modelo(){
         }
         if(encontrado != true) {
         	System.out.println("╗");
-            System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            System.out.println("            NENHUMA VAN ENCONTRADA       ");
             System.out.println("╚═══════════════════════════════════════════╝\n");
         }
         
@@ -258,7 +267,7 @@ public static void buscar_vans_pela_marca(){
         }
         if(encontrado != true) {
         	System.out.println("╗");
-            System.out.println("           NENHUM CARRO ENCONTRADO       ");
+            System.out.println("            NENHUMA VAN ENCONTRADA       ");
             System.out.println("╚═══════════════════════════════════════════╝\n");
         }
         
