@@ -16,4 +16,4 @@
    ```bash
    cd Aluguel-Veiculos-Sistema
    ```
-2. Acesse a pasta do projeto e abra o arquivo `index.html` no seu navegador.
+2. Acesse a pasta do projeto em alguma IDE (VSCode ou Eclipse) e execute o arquivo Main.Java .
