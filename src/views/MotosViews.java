@@ -6,17 +6,29 @@ import java.util.*;
 public class MotosViews {
 
     public static  void menu_busca_moto(){
-    	System.out.println("\n╔═════════════════════════════════════╗");
-        System.out.println("║          VISUALIZAR MOTOS           ║");
-        System.out.println("╚═════════════════════════════════════╝");
-        System.out.println("1 - Disponíveis");
-        System.out.println("2 - Alugadas");
-        System.out.println("3 - Em Manutenção");
-        System.out.println("4 - Buscar pela Placa");
-        System.out.println("5 - Buscar pelo Modelo");
-        System.out.println("6 - Buscar pela Marca");
-        System.out.println("7 - Voltar ao Menu de Busca");
-        System.out.println("══════════════════════════════════════");
+    	try {
+	    	System.out.println("\n╔═════════════════════════════════════╗");
+	        System.out.println("║          VISUALIZAR MOTOS           ║");
+	        System.out.println("╚═════════════════════════════════════╝");
+	        Thread.sleep(250);
+	        System.out.println("1 - Disponíveis");
+	        Thread.sleep(250);
+	        System.out.println("2 - Alugadas");
+	        Thread.sleep(250);
+	        System.out.println("3 - Em Manutenção");
+	        Thread.sleep(250);
+	        System.out.println("4 - Buscar pela Placa");
+	        Thread.sleep(250);
+	        System.out.println("5 - Buscar pelo Modelo");
+	        Thread.sleep(250);
+	        System.out.println("6 - Buscar pela Marca");
+	        Thread.sleep(250);
+	        System.out.println("7 - Listar Todas Motos");
+            Thread.sleep(250);
+	        System.out.println("0 - Voltar ao Menu de Busca");
+	        System.out.println("══════════════════════════════════════");
+    	} catch (Exception e) {
+        }
     }
 
     public static void todas_motos_disponiveis(){
@@ -274,6 +286,47 @@ public class MotosViews {
         }catch (InputMismatchException e) {
             System.out.println("🚫 Entrada inválida!");
        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+//----------------------------------------------------------------------------------------
+    
+    
+    public static void listar_todas_motos(){
+        try (Connection conn = Conexao.getConexao()) {
+            boolean encontrado = false;
+
+            String sql ="SELECT * FROM veiculos WHERE tipo_veiculo = 'Moto'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            System.out.println("");
+                        
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║        LISTAR TODAS AS MOTOS        ║");
+	        System.out.println("╚═════════════════════════════════════╝");
+            System.out.print("╔══════════════════════════════════════");
+            while (rs.next()) {
+                encontrado = true;
+                System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
+                System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+                System.out.println("║   Status: " + rs.getString("status_veiculo"));
+                System.out.print("╠══════════════════════════════════════");
+                Thread.sleep(350);            
+            }
+            if(encontrado == true) {
+                System.out.println("\n");
+            }
+            if(encontrado != true) {
+            	System.out.println("╗");
+                System.out.println("        NENHUMA MOTO ENCONTRADA       ");
+                System.out.println("╚══════════════════════════════════════╝\n");
+            }
+    
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }

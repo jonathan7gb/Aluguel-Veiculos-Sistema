@@ -106,7 +106,7 @@ public class GerenciadorSistema {
 
 	            switch (escolhaBuscaPrincipal) {
 	                case 1:
-	                    menu_busca_todos();
+	                    VeiculosViews.menu_busca_todos();
 	                    System.out.print("? - Sua escolha: ");
 	                    escolhaBuscaTodos = scNum.nextInt();
 	                    Thread.sleep(300); 
@@ -131,6 +131,9 @@ public class GerenciadorSistema {
 	                            VeiculosViews.buscar_veiculo_marca();
 	                    		break;
 	                    	case 7:
+	                            VeiculosViews.listar_todos_veiculos();
+	                    		break;
+	                    	case 0:
 	                            System.out.println("");
 	                            break;
 	                        default:
@@ -167,6 +170,9 @@ public class GerenciadorSistema {
 	                            CarrosViews.buscar_carro_pela_marca();
 	                    		break;
 	                    	case 7:
+	                    		CarrosViews.listar_todos_carros();
+	                    		break;
+	                    	case 0:
 	                            System.out.println("");
 	                            break;
 	                        default:
@@ -203,6 +209,9 @@ public class GerenciadorSistema {
 	                            MotosViews.buscar_motos_pela_marca();
 	                    		break;
 	                    	case 7:
+	                    		MotosViews.listar_todas_motos();
+	                    		break;
+	                    	case 0:
 	                            System.out.println("");
 	                            break;
 	                        default:
@@ -239,6 +248,9 @@ public class GerenciadorSistema {
 	                            VansViews.buscar_vans_pela_marca();
 	                    		break;
 	                    	case 7:
+	                    		VansViews.listar_todas_vans();
+	                    		break;
+	                    	case 0:
 	                            System.out.println("");
 	                            break;
 	                        default:
@@ -253,7 +265,7 @@ public class GerenciadorSistema {
 	                    VeiculosViews.View_todos_veiculos_apagados();
 	                    break;
 	            
-	                case 6:
+	                case 0:
 	                    System.out.println("");
 	                    break;
 	                default:
@@ -285,35 +297,11 @@ public class GerenciadorSistema {
 	                Thread.sleep(100); 
 	                System.out.println("5 - Visualizar Todos Apagados");
 	                Thread.sleep(100); 
-	                System.out.println("6 - Voltar ao Menu Principal");
+	                System.out.println("0 - Voltar ao Menu Principal");
 	                Thread.sleep(300); 
 	                System.out.println("══════════════════════════════════════");
 	            }catch (Exception e) {
 			    }
 	        }
 
-	        public static void menu_busca_todos(){
-	            try {
-	            	System.out.println("\n╔═════════════════════════════════════╗");
-			        System.out.println("║           VISUALIZAR TODOS          ║");
-			        System.out.println("╚═════════════════════════════════════╝");
-	                System.out.println("1 - Disponíveis");
-	                Thread.sleep(300);
-	                System.out.println("2 - Alugados");
-	                Thread.sleep(300);
-	                System.out.println("3 - Em Manutenção");
-	                Thread.sleep(300);
-	                System.out.println("4 - Buscar pela Placa");
-	                Thread.sleep(300);
-	                System.out.println("5 - Buscar pelo Modelo");
-	                Thread.sleep(300);
-	                System.out.println("6 - Buscar pela Marca");
-	                Thread.sleep(300);
-	                System.out.println("7 - Voltar ao Menu de Busca");
-	                Thread.sleep(300);
-	                System.out.println("══════════════════════════════════════");
-	            } catch (Exception e) {
-	            }
-	        }
-	
 }

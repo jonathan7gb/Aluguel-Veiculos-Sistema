@@ -5,6 +5,36 @@ import java.util.*;
 
 public class VeiculosViews {
 
+	 public static void menu_busca_todos(){
+         try {
+         	System.out.println("\n╔═════════════════════════════════════╗");
+		        System.out.println("║           VISUALIZAR TODOS          ║");
+		        System.out.println("╚═════════════════════════════════════╝");
+             System.out.println("1 - Disponíveis");
+             Thread.sleep(250);
+             System.out.println("2 - Alugados");
+             Thread.sleep(250);
+             System.out.println("3 - Em Manutenção");
+             Thread.sleep(250);
+             System.out.println("4 - Buscar pela Placa");
+             Thread.sleep(250);
+             System.out.println("5 - Buscar pelo Modelo");
+             Thread.sleep(250);
+             System.out.println("6 - Buscar pela Marca");
+             Thread.sleep(250);
+             System.out.println("7 - Listar Todos Veículos");
+             Thread.sleep(250);
+             System.out.println("0 - Voltar ao Menu de Busca");
+             Thread.sleep(250);
+             System.out.println("══════════════════════════════════════");
+         } catch (Exception e) {
+         }
+     }
+	
+	 
+//----------------------------------------------------------------------
+	 
+	 
     public static void todos_veiculos_disponiveis(){
         try (Connection conn = Conexao.getConexao()) {
             boolean encontrado = false;
@@ -263,9 +293,52 @@ public class VeiculosViews {
             e.printStackTrace();
         }
     }
+    
 
 //----------------------------------------------------------------------------------------
 
+    
+    public static void listar_todos_veiculos(){
+        try (Connection conn = Conexao.getConexao()) {
+            boolean encontrado = false;
+
+            String sql ="SELECT * FROM veiculos";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            System.out.println("");
+                        
+            System.out.println("╔═════════════════════════════════════╗");
+	        System.out.println("║      LISTAR TODOS OS VEÍCULOS       ║");
+	        System.out.println("╚═════════════════════════════════════╝");
+            System.out.print("╔══════════════════════════════════════");
+            while (rs.next()) {
+                encontrado = true;
+                System.out.printf("\n║   [%s] %s %s                              %n", rs.getString("placa_veiculo"), rs.getString("marca_veiculo"), rs.getString("modelo_veiculo"));
+                System.out.println("║   Tipo: " + rs.getString("tipo_veiculo") );
+                System.out.println("║   Ano de Fabricação: " + rs.getInt("ano_fabricacao_veiculo"));
+                System.out.println("║   Status: " + rs.getString("status_veiculo"));
+                System.out.print("╠══════════════════════════════════════");
+                Thread.sleep(350);            
+            }
+            if(encontrado == true) {
+                System.out.println("\n");
+            }
+            if(encontrado != true) {
+            	System.out.println("╗");
+                System.out.println("       NENHUM VEÍCULO ENCONTRADO       ");
+                System.out.println("╚══════════════════════════════════════╝\n");
+            }
+    
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+//----------------------------------------------------------------------------------------
+    
+    
 public static void View_todos_veiculos_apagados(){
     try (Connection conn = Conexao.getConexao()) {
         boolean encontrado = false;
